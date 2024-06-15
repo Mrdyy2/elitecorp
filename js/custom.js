@@ -178,3 +178,16 @@ $('.counter').counterUp({
 
 
 }(jQuery));
+
+/* = Apparition du up button
+----------------------------------------------- */
+var iScrollPos = 0;
+$(window).scroll(function () {
+	var iCurScrollPos = $(this).scrollTop();
+	if (iCurScrollPos < iScrollPos) {
+		$('#up-button').removeClass('show');
+	} else {
+		$('#up-button').addClass('show');
+	}
+	iScrollPos = iCurScrollPos;
+});
